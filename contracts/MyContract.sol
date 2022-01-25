@@ -25,6 +25,14 @@ contract MyCollectible is ERC721, Ownable {
             "Not the owner of this loot"
         );
         require(!_exists(lootId), "This token has already been minted");
+        string memory Weapon = lootContract.getWeapon(lootId);
+        string memory Chest = lootContract.getChest(lootId);
+        string memory Head = lootContract.getHead(lootId);
+        string memory Waist = lootContract.getWaist(lootId);
+        string memory Foot = lootContract.getFoot(lootId);
+        string memory Hand = lootContract.getHand(lootId);
+        string memory Neck = lootContract.getNeck(lootId);
+        string memory Ring = lootContract.getRing(lootId);
 
         _safeMint(msg.sender, lootId);
     }

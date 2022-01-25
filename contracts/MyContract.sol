@@ -28,11 +28,4 @@ contract MyCollectible is ERC721, Ownable {
 
         _safeMint(msg.sender, lootId);
     }
-
-    function withdraw() public onlyOwner {
-        uint256 balance = address(this).balance;
-        msg.sender.transfer(balance);
-    }
-
-    function deposit() public payable onlyOwner {}
 }
